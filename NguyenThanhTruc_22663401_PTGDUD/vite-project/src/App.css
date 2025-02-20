@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}
+
+.user-container {
+  border: 2px solid blue;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+}

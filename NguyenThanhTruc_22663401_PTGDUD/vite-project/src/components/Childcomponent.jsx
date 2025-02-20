@@ -1,31 +1,4 @@
 import React from "react";
-// class Childcomponent extends React.Component {
-//     render() {
-//         return (
-//             <>
-//                 <h1>
-//                     I just get from parent value:{this.props.myProp}
-//                 </h1>
-//             </>
-//         );
-//     };
-// }
-
-//     render() {
-//         return (
-//             <>
-//                 <h1>
-//                    call function Sum:6+7={this.props.sum(6, 7)}
-			   
-//                 </h1>
-//             </>
-//         );
-//     };
-
-   
-// }
-// export default Childcomponent;
-
 
 class Childcomponent extends React.Component {
     constructor(props) {
@@ -33,6 +6,8 @@ class Childcomponent extends React.Component {
         this.state = {
             valueInput: 'abc',  // giá trị mặc định
         };
+
+        this.valueInput = ""; //  Biến tạm để lưu dữ liệu nhập vào
     }
 
     handleInput = (event) => {
@@ -42,21 +17,43 @@ class Childcomponent extends React.Component {
         })
     }
 
+    handleOnSubmit = (event) => {
+        event.preventDefault();//ngăn việc tải lại trang
+        console.log(this.state)
+
+        this.setState({
+            valueInput: this.inputValue // Chỉ cập nhật state khi nhấn Submit
+        })
+    }
+
+    handleOnchangeInput = (event) => {
+        this.setState({
+            valueInput: event.target.value
+        })
+    }
+
 
     render() {
         return (
             <div>
-            
-                 <input value={this.state.valueInput} onChange={(event) => this.handleInput(event)}
-                 type="text" />
+                {/* <input value={this.state.valueInput} onChange={(event) => this.handleInput(event)} type="text" /> */}
                 <div>
             	    <span>Giá trị hiện tại: {this.state.valueInput}</span>
          	    </div>
 
+                <form action="" onSubmit={(event) => this.handleOnSubmit(event)}>
+                    <input type="text" value={this.state.valueInput} onChange={(event) => this.handleOnchangeInput(event)} />
+                    <button>Submit</button>
+                </form>
+
             </div>
+
             
+
+
         );
     }
 }
 
 export default Childcomponent;
+
