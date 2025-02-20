@@ -26,6 +26,7 @@ import React from "react";
 // }
 // export default Childcomponent;
 
+
 class Childcomponent extends React.Component {
     constructor(props) {
         super(props);
