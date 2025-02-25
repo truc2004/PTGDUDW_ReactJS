@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -54,4 +54,133 @@
   margin: 20px;
   border-radius: 10px;
   max-width: 500px;
+} */
+
+/* exercise 3 */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.contact-container {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 bảng trên 1 hàng */
+  gap: 20px; /* Khoảng cách giữa các bảng */
+  justify-content: center;
+}
+
+.contact-box {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: left;
+}
+
+.contact-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.contact-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.button-design {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 15px;  /* Kích thước vừa phải */
+  border-radius: 5px; /* Bo tròn nhẹ */
+  cursor: pointer;
+  font-size: 14px;  /* Làm chữ đậm hơn */
+  font-weight: bold; /* In đậm chữ */
+  width: auto;  /* Giữ kích thước gọn gàng */
+  margin-top: 5px;
+  display: block;
+  margin-left: auto; /* Đẩy nút về bên phải */
+}
+
+.button-design:hover {
+  background-color: darkred;
+}
+
+.button-delete-all-container {
+  display: flex;
+  justify-content: flex-end; /* Đẩy nút về bên phải */
+  margin-top: 20px;
+}
+
+.button-delete-all {
+  background-color: red;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: auto; /* Đẩy nút về bên phải */
+}
+
+.button-delete-all:hover {
+  background-color: gray;
+}
+
+/* Đảm bảo responsive: Khi màn hình nhỏ hơn 768px, chỉ hiển thị 2 bảng trên 1 hàng */
+@media (max-width: 768px) {
+  .contact-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Khi màn hình nhỏ hơn 480px, chỉ hiển thị 1 bảng trên 1 hàng */
+@media (max-width: 480px) {
+  .contact-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
